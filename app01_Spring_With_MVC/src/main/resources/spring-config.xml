@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bean="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+   <!-- <bean:annotation-config/> -->
+    <context:component-scan base-package="com.spring.*"/>
+<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/empdb"/>
+    <property name="username" value="root"/>
+    <property name="password" value="1234"/>
+
+</bean>
+
+    <!--<bean name="studentDao" class="com.spring.dao.StudentDaoImpl" autowire="byType"/> -->
+    <!--
+    <bean name="studentDao" class="com.spring.dao.StudentDaoImpl">
+       <property name="dataSource" ref="dataSource"/>
+    </bean>
+    -->
+   <!-- <bean name="studentService" class="com.spring.service.StudentServiceImpl" autowire="byType"/>-->
+    <!--
+    <bean name="studentService" class="com.spring.service.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+    -->
+
+    <!--<bean name="studentController" class="com.spring.controller.StudentController" autowire="byType"/>-->
+    <!--
+    <bean name="studentController" class="com.spring.controller.StudentController">
+        <property name="studentService" ref="studentService"/>
+
+    </bean>
+    -->
+</beans>
